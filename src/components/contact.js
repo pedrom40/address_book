@@ -3,10 +3,14 @@ import './contact.css';
 
 export default function Contact(props) {
     return (
-        <div className="contact">
-            <div className="contact-photo"><img src={props.photo} /></div>
-            <div className="contact-name">{props.name}</div>
-            <div className="contact-address">{props.address}</div>
+        <div id={`contact-${props.index}`} className="contact">
+            <img className="contact-photo" src={props.photo} alt={`${props.name}${props.name.slice(-1) === 's' ? "'" : "'s"} avatar`}  />
+            <h2 className="contact-name">
+                {props.name}
+            </h2>
+            <div className="contact-address">
+                {props.address}
+            </div>
         </div>
     );
 }

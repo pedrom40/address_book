@@ -22,16 +22,17 @@ export default class AddressBook extends React.Component {
                     address: '4 Pennsylvania Plaza'
                 }
             ]
-        }
+        };
     }
+
     render() {
-        const contacts = this.state.contacts.map( (contact, index) =>
-            <Contact key={index} {...contact} />
+        const contacts = this.state.contacts.map((contact, index) =>
+            <Contact key={index} index={index} {...contact} />
         );
         return (
-            <div>
+            <div className="address-book">
                 {contacts}
             </div>
-        )
+        );
     }
 }
